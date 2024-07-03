@@ -1,0 +1,244 @@
+/* Basic Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url(milky-way-2695569_1280.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  background-color: #333;
+  width: 100%;
+  color: #fff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+nav  a:hover {
+  color: #648af5;
+  
+}
+
+.sidebar {
+  position:fixed;
+  background-color: #393a942e;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: #648af5;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
+.menubutton {
+  display: none;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.universe {
+  padding: 10px;
+}
+
+.planet {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-top: 10%;
+  
+}
+
+.text {
+  flex: 1 1 400px;
+  padding: 10px;
+  color: aliceblue;
+  
+}
+
+.image {
+  flex: 1 1 400px;
+  padding: 10px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 5%;
+}
+
+.cosmos {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cosmos4{
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+.cosmos3{
+  padding-bottom: 50px;
+}
+/* Media Queries */
+@media (max-width: 800px)
+{
+
+ .hideonmobile{
+  display: none;
+ }
+
+  .heading {
+    font-size: 1em;
+  }
+.menubutton {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text, .image {
+    flex: 1 1 100%;
+  }
+
+  .cosmos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stars1{
+    padding-bottom: 25px;
+  }
+  .cosmos4{
+    padding-top: 40px; 
+  }
+}
+ 
+@media (max-width: 480px) {
+  .heading {
+    font-size: 0.9em;
+  }
+.sidebar {
+  width: 50%;
+}
+
+  .sidebar ul li {
+    padding: 5px;
+    font-size: large;
+  }
+  .planet {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30%;
+    padding-bottom: 50%;
+  }
+
+  .cosmos1 {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50%;
+    padding-bottom: 50%;
+  }
+
+  .cosmos2 {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 230px;
+    padding-bottom: 30%;
+
+  }
+  .cosmos3 {
+    padding-left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 30%;
+  }
+  .stars1{
+    padding-top: 40px;
+    padding-bottom: 200px;
+  }
+  .stars2{
+    padding-bottom: 20px;
+  }
+  .stars3{
+    padding-bottom: 20px;
+  }
+}
