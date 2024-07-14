@@ -30,9 +30,9 @@ window.addEventListener('scroll', function() {
     });
   
     if (window.pageYOffset > 0) {
-      navbar.style.backgroundColor = '#131a37'; // Change background color on scroll
+      navbar.style.backgroundColor = '#131a37'; 
     } else {
-      navbar.style.backgroundColor = 'rgba(52, 45, 50, 0.8)'; // Reset background color
+      navbar.style.backgroundColor = 'rgba(52, 45, 50, 0.8)'; 
     }
   });
   

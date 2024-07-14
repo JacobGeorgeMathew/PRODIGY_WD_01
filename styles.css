@@ -4,56 +4,66 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-image: url(milky-way-2695569_1280.jpg);
+  background-image: url(images/milky-way-2695569_1280.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
 }
+html{
+  scroll-behavior: smooth;
+}
+
 
 .container {
   max-width: 100%;
+  height: 50px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   align-items: center;
 }
 
-nav {
-  background-color: #333;
-  width: 100%;
-  color: #fff;
-  position: fixed;
+nav{
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-nav ul {
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul li {
-  margin: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-nav  a:hover {
-  color: #648af5;
   
+}
+
+nav ul{
+  position: fixed;
+  right: 280px;
+  top: 10px;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  position: relative;
+}
+
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #7DF9FF;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+  transition: 0.5s;
 }
 
 .sidebar {
@@ -102,46 +112,51 @@ nav  a:hover {
 }
 
 .universe {
-  padding: 10px;
+ display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(9,100vh);
+  grid-gap: 0px 0px;
 }
 
 .planet {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  padding-top: 10%;
-  
+ 
+  padding: 50px 50px;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 100% ;
 }
-
+.inside{
+  background: black;
+  border-radius: 25px;
+ 
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .text {
-  flex: 1 1 400px;
-  padding: 10px;
-  color: aliceblue;
-  
-}
 
+  margin: 20px;
+  text-align: center;
+  color: rgb(222, 234, 245);
+}
+.text h3{
+  font-size: 40px;
+}
+.text p{
+  font-size: 20px;
+}
 .image {
-  flex: 1 1 400px;
-  padding: 10px;
-}
-
-.image img {
-  width: 100%;
+ 
+  width: 400px;
   height: auto;
-  padding-bottom: 5%;
+}
+.more{
+  display: none;
 }
 
-.cosmos {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cosmos4{
-  padding-top: 0px;
-  padding-bottom: 60px;
-}
-.cosmos3{
-  padding-bottom: 50px;
-}
+
 /* Media Queries */
 @media (max-width: 800px)
 {
@@ -150,95 +165,89 @@ nav  a:hover {
   display: none;
  }
 
-  .heading {
-    font-size: 1em;
-  }
+  
 .menubutton {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1,5em;
   cursor: pointer;
 }
   nav ul {
     flex-direction: column;
     align-items: center;
   }
-
-  .planet {
-    flex-direction: column;
-    align-items: center;
+  .planet{
+    display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 100%;
+ padding: 50px 50px;
   }
-
-  .text, .image {
-    flex: 1 1 100%;
+ .inside{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 1fr;
+ align-items: center;
+ justify-content: center;
+ }
+ .image{
+ grid-row-start: 1;
+ grid-row-end: 2;
+ }
+ .image img{
+    width: 300px;
+    height: 200px;
   }
-
-  .cosmos {
-    flex-direction: column;
-    align-items: center;
+  .text{
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
-  .stars1{
-    padding-bottom: 25px;
+  .text h3{
+    font-size: 25px;
   }
-  .cosmos4{
-    padding-top: 40px; 
+  .text p{
+    font-size: 15px;
   }
+  
 }
  
 @media (max-width: 480px) {
-  .heading {
-    font-size: 0.9em;
-  }
+  
 .sidebar {
-  width: 50%;
+  width: 40%;
 }
-
+ 
   .sidebar ul li {
     padding: 5px;
     font-size: large;
   }
-  .planet {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30%;
-    padding-bottom: 50%;
+  .inside{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr;
+   align-items: center;
+   justify-content: center;
+   }
+   .planet{
+    padding-left: 5px;
+    padding-right: 5px;
+   }
+  .image{
+    
   }
-
-  .cosmos1 {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50%;
-    padding-bottom: 50%;
+  .image img{
+    width: 175px;
+    height: 150px;
   }
-
-  .cosmos2 {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 230px;
-    padding-bottom: 30%;
-
+  .text{
   }
-  .cosmos3 {
-    padding-left: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 30%;
+  .text h3{
+    font-size: 25px;
   }
-  .stars1{
-    padding-top: 40px;
-    padding-bottom: 200px;
+  .text p{
+    font-size: 12px;
   }
-  .stars2{
-    padding-bottom: 20px;
-  }
-  .stars3{
-    padding-bottom: 20px;
-  }
+  
 }
